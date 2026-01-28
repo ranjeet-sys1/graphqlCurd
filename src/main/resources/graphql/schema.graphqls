@@ -1,0 +1,21 @@
+type Employee{
+    id: ID!
+    name: String
+    organisation: String
+    salary: Float
+    city: String
+}
+input EmployeeInput{
+    name: String
+    organisation: String
+    salary: Float
+    city: String
+}
+type Query{
+    getEmployeeById(id: ID!): Employee
+    getAll: [Employee]
+}
+type Mutation{
+    saveEmployee(employeeInput:EmployeeInput):Employee
+    updateEmployee(id:ID!,employeeInput:EmployeeInput):Employee
+}

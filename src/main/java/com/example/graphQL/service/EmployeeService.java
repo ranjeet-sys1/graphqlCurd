@@ -11,4 +11,5 @@ public interface EmployeeService {
     Employee getEmployeeById(Long id);
     List<Employee> getAll();
     EmployeeInput findById(Long id);
+    List<Employee> getEmployeeBasedOnFilter(EmployeeInput employeeInput);
 }

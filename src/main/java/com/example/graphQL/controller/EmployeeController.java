@@ -41,4 +41,8 @@ public class EmployeeController {
         return service.getAll();
 
     }
+    @QueryMapping
+    public List<Employee> getEmployeesBasedOnFilter(@Argument EmployeeInput employeeInput){
+        return service.getEmployeeBasedOnFilter(employeeInput);
+    }
 }

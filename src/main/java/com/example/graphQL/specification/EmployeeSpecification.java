@@ -21,6 +21,12 @@ public class EmployeeSpecification {
                                     ));
 
                 }
+                if(filter.getOrganisation()!=null){
+                    predicates.add(cb.like(cb.lower(root.get("organisation")),"%"+filter.getOrganisation()+"%"));
+                }
+                if(filter.getSalary()!=null){
+                    predicates.add(cb.lessThan(root.get("salary"),filter.getSalary()));
+                }
             }
             return cb.and(predicates.toArray(new Predicate[0]));
         };
